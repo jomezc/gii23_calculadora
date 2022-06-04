@@ -12,7 +12,8 @@ class TestCalc(unittest.TestCase):
     """
 
     def setUp(self):
-        self.datos_suma = [[2, 2, 4], [-2, -2, -4], [2, -2, 0]]
+        self.calculadora = Calculadora()
+        self.datos_suma = [[2, 2, 4], [-2, -2, -4], [2, -2, 0], ]
 
     def testSuma(self):
         """
@@ -25,7 +26,7 @@ class TestCalc(unittest.TestCase):
             b = dato[1]
             esperado = dato[2]
             # act,  invocamos al método suma
-            resultado = a+b
+            resultado = cacluladora.suma(a, b)
             # asser, validamos los resultados
             self.assertEqual(resultado, esperado, f'la suma de {a} + {b} debería ser {esperado}')
 
