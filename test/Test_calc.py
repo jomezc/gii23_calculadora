@@ -14,7 +14,7 @@ class TestCalc(unittest.TestCase):
         self.calculadora = Calculadora()
         self.datos_suma = [[2, 2, 4], [-2, -2, -4], [2, -2, 0], [350.25, 100.75, 451], [200, 100.5, 300.5]]
         self.datos_resta = [[2, 2, 0], [-2, -2, 0], [2, -2, 4], [350, 100.75, 249.25], [200, 100.5, 99.5]]
-        self.datos_multiplicación = [[2, 2, 4], [-2, -2, 4], [2, -2, -4], [350, 100.75, 35262.5], [200, 100.5, 0]]
+        self.datos_multiplicación = [[2, 2, 4], [-2, -2, 4], [2, -2, -4], [350, 100.75, 35262.5], [200, 100.5, 20100]]
 
 
     def testSuma(self):
