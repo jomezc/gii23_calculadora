@@ -15,14 +15,14 @@ class TestCalc(unittest.TestCase):
         self.datos_suma = [[2, 2, 4], [-2, -2, -4], [2, -2, 0], [350.25, 100.75, 451], [200, 100.5, 300.5]]
         self.datos_resta = [[2, 2, 0], [-2, -2, 0], [2, -2, 4], [350, 100.75, 249.25], [200, 100.5, 99.5]]
         self.datos_multiplicación = [[2, 2, 4], [-2, -2, 4], [2, -2, -4], [350, 100.75, 35262.5], [200, 100.5, 20100]]
-
+        self.datos_división = [[2, 2, 1], [-2, -2, 1], [2, -2, -1], [350, 100.75, 3.47394], [200, 100.5, 1.99004]]
 
     def testSuma(self):
         """
         Método de test de suma de elementos con un esperado
         :param datos: Lista con las listas de datos de prueba
         """
-        # arrrange, Inicializamos los parámetros de suma y para cada caso de la lista de casos
+        # arrange, Inicializamos los parámetros de suma y para cada caso de la lista de casos
         for dato in self.datos_suma:
             a = dato[0]
             b = dato[1]
@@ -38,7 +38,7 @@ class TestCalc(unittest.TestCase):
         Método de test de resta de elementos con un esperado
         :param datos: Lista con las listas de datos de prueba
         """
-        # arrrange, Inicializamos los parámetros de resta y para cada caso de la lista de casos
+        # arrange, Inicializamos los parámetros de resta y para cada caso de la lista de casos
         for dato in self.datos_resta:
             a = dato[0]
             b = dato[1]
@@ -54,7 +54,7 @@ class TestCalc(unittest.TestCase):
         Método de test de multiplicación de elementos con un esperado
         :param datos: Lista con las listas de datos de prueba
         """
-        # arrrange, Inicializamos los parámetros de multiplicación y para cada caso de la lista de casos
+        # arrange, Inicializamos los parámetros de multiplicación y para cada caso de la lista de casos
         for dato in self.datos_multiplicación:
             a = dato[0]
             b = dato[1]
@@ -64,6 +64,22 @@ class TestCalc(unittest.TestCase):
             # asser, validamos los resultados
             error = f'la multiplicación de {a} * {b} debería ser {esperado}'
             self.assertEqual(resultado, esperado, error)
+
+    def testDivision(self):
+        """
+        Método de test de Division de elementos con un esperado
+        :param datos: Lista con las listas de datos de prueba
+        """
+        # arrange, Inicializamos los parámetros de Division y para cada caso de la lista de casos
+        for dato in self.datos_división:
+            a = dato[0]
+            b = dato[1]
+            esperado = dato[2]
+            # act,  invocamos al método Division
+            resultado = self.calculadora.Division(a, b)
+            # asser, validamos los resultados
+            error = f'la Division de {a} / {b} debería ser {esperado}'
+            self.AssertAlmostEqual(resultado, esperado, error)
 
 #   MAIN
 if __name__ == '__main__':
