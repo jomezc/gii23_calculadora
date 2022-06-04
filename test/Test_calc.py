@@ -16,6 +16,7 @@ class TestCalc(unittest.TestCase):
         self.datos_resta = [[2, 2, 0], [-2, -2, 0], [2, -2, 4], [350, 100.75, 249.25], [200, 100.5, 99.5]]
         self.datos_multiplicación = [[2, 2, 4], [-2, -2, 4], [2, -2, -4], [350, 100.75, 35262.5], [200, 100.5, 20100]]
         self.datos_división = [[2, 2, 1], [-2, -2, 1], [2, -2, -1], [350, 100.75, 3.47395], [200, 100.5, 1.99005]]
+        self.datos_raíz = [[2, 1.41421], [16, 4], [500, 22.36068], [1, 1], [987654321, 31426.96805]]
 
     def testSuma(self):
         """
@@ -79,6 +80,21 @@ class TestCalc(unittest.TestCase):
             resultado = self.calculadora.division(a, b)
             # asser, validamos los resultados
             error = f'la división de {a} / {b} debería ser {esperado}'
+            self.assertAlmostEqual(resultado, esperado, 5, error)
+
+    def testRaiz(self):
+        """
+        Método de test de raiz de elementos con un esperado
+        :param datos: Lista con las listas de datos de prueba
+        """
+        # arrange, Inicializamos los parámetros de raiz y para cada caso de la lista de casos
+        for dato in self.datos_raíz:
+            a = dato[0]
+            esperado = dato[1]
+            # act,  invocamos al método raiz
+            resultado = self.calculadora.raiz(a)
+            # asser, validamos los resultados
+            error = f'la raíz cuadrada de {a}  debería ser {esperado}'
             self.assertAlmostEqual(resultado, esperado, 5, error)
 
 #   MAIN
