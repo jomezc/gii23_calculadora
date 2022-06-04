@@ -13,7 +13,7 @@ class TestCalc(unittest.TestCase):
     def setUp(self):
         self.calculadora = Calculadora()
         self.datos_suma = [[2, 2, 4], [-2, -2, -4], [2, -2, 0], [350.25, 100.75, 451], [200, 100.5, 300.5]]
-        self.datos_resta = [[2, 2, 0], [-2, -2, 0], [2, -2, 4], [350, 100.75, 249.25], [200, 100.5, 300.5]]
+        self.datos_resta = [[2, 2, 0], [-2, -2, 0], [2, -2, 4], [350, 100.75, 249.25], [200, 100.5, 99.5]]
 
     def testSuma(self):
         """
@@ -33,7 +33,7 @@ class TestCalc(unittest.TestCase):
 
     def testResta(self):
         """
-        Método de test de suma de elementos con un esperado
+        Método de test de resta de elementos con un esperado
         :param datos: Lista con las listas de datos de prueba
         """
         # arrrange, Inicializamos los parámetros de suma y para cada caso de la lista de casos
@@ -41,10 +41,10 @@ class TestCalc(unittest.TestCase):
             a = dato[0]
             b = dato[1]
             esperado = dato[2]
-            # act,  invocamos al método suma
+            # act,  invocamos al método resta
             resultado = self.calculadora.resta(a, b)
             # asser, validamos los resultados
-            error = f'la suma de {a} - {b} debería ser {esperado}'
+            error = f'la resta de {a} - {b} debería ser {esperado}'
             self.assertEqual(resultado, esperado, error)
 #   MAIN
 if __name__ == '__main__':
