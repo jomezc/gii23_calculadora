@@ -12,7 +12,7 @@ class TestCalc(unittest.TestCase):
 
     def setUp(self):
         self.calculadora = Calculadora()
-        self.datos_suma = [[2, 2, 4], [-2, -2, -4], [2, -2, 0], [350.25, 100.75, 451], [200, 100.5, 99.5]]
+        self.datos_suma = [[2, 2, 4], [-2, -2, -4], [2, -2, 0], [350.25, 100.75, 451], [200, 100.5, 300.5]]
 
     def testSuma(self):
         """
