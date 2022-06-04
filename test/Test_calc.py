@@ -1,9 +1,8 @@
 import sys, os, unittest
-from lib.Calculadora import pr
+from lib.Calculadora import Calculadora
 
 # LIBRERIAS
 import sys, os, unittest
-
 
 #   CLASES
 class TestCalc(unittest.TestCase):
@@ -26,10 +25,10 @@ class TestCalc(unittest.TestCase):
             b = dato[1]
             esperado = dato[2]
             # act,  invocamos al método suma
-            resultado = cacluladora.suma(a, b)
+            resultado = self.calculadora.suma(a, b)
             # asser, validamos los resultados
-            self.assertEqual(resultado, esperado, f'la suma de {a} + {b} debería ser {esperado}')
-
+            error = f'la suma de {a} + {b} debería ser {esperado}'
+            self.assertEqual(resultado, esperado, error)
 
 #   MAIN
 if __name__ == '__main__':
