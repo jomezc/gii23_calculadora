@@ -32,7 +32,7 @@ class TestCalc(unittest.TestCase):
             resultado = self.calculadora.suma(a, b)
             # asser, validamos los resultados
             error = f'la suma de {a} + {b} debería ser {esperado}'
-            self.assertEqual(resultado, esperado, error)
+            self.assertEqual(resultado, esperado, error) # Compara el resultado con lo esperado (sea igual)
 
     def testResta(self):
         """
@@ -48,7 +48,7 @@ class TestCalc(unittest.TestCase):
             resultado = self.calculadora.resta(a, b)
             # asser, validamos los resultados
             error = f'la resta de {a} - {b} debería ser {esperado}'
-            self.assertEqual(resultado, esperado, error)
+            self.assertEqual(resultado, esperado, error) # Compara el resultado con lo esperado (sea igual)
 
     def testMultiplicacion(self):
         """
@@ -64,7 +64,7 @@ class TestCalc(unittest.TestCase):
             resultado = self.calculadora.multiplicacion(a, b)
             # asser, validamos los resultados
             error = f'la multiplicación de {a} * {b} debería ser {esperado}'
-            self.assertEqual(resultado, esperado, error)
+            self.assertEqual(resultado, esperado, error) # Compara el resultado con lo esperado (sea igual)
 
     def testDivision(self):
         """
@@ -80,6 +80,7 @@ class TestCalc(unittest.TestCase):
             resultado = self.calculadora.division(a, b)
             # asser, validamos los resultados
             error = f'la división de {a} / {b} debería ser {esperado}'
+            # Compara el resultado con lo esperado con 5 dígitos de precisión
             self.assertAlmostEqual(resultado, esperado, 5, error)
 
     def testRaiz(self):
@@ -95,6 +96,7 @@ class TestCalc(unittest.TestCase):
             resultado = self.calculadora.raiz(a)
             # asser, validamos los resultados
             error = f'la raíz cuadrada de {a}  debería ser {esperado}'
+            # Compara el resultado con lo esperado con 5 dígitos de precisión
             self.assertAlmostEqual(resultado, esperado, 5, error)
 
 #   MAIN

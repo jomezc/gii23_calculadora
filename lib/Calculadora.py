@@ -1,19 +1,43 @@
 class Calculadora():
     """
-    Clase calculadora con los métodos de cálculo de numeros reales
-    :return: numero real resultado del cálculo
+    Clase calculadora que contiene los métodos de cálculo de números reales
+    :return: número  resultado del cálculo del método llamado
     """
 
     def suma(self, a, b):
+        """
+        Método para el calculo de la suma de dos números
+        :param a: primer sumando
+        :param b:segundo sumando
+        :return: suma de ambos numeros
+        """
         return a + b
 
     def resta(self, a, b):
+        """
+        Método para el calculo de la resta de dos números
+        :param a: Minuendo
+        :param b: Sustraendo
+        :return: devolvemos la diferencia entre los numeros
+        """
         return a - b
 
     def multiplicacion(self, a, b):
+        """
+        Método para el calculo de la multiplicación de dos números
+        :param a: primer factor
+        :param b: segundo factor
+        :return: devolvemos el producto de los dos numeros
+        """
         return a * b
 
     def division(self, a, b):
+        """
+        Método para el calculo de la multiplicación de dos números
+        :param a: dividendo
+        :param b: divisor
+        :return: devolvemos el cociente de los dos números
+        """
         if b == 0:
             return "Dividir un numero entre 0 no tiene un resultado bien definido"
         else:
