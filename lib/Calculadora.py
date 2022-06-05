@@ -3,6 +3,7 @@ class Calculadora():
     Clase calculadora con los métodos de cálculo de numeros reales
     :return: numero real resultado del cálculo
     """
+
     def suma(self, a, b):
         return a + b
 
@@ -13,7 +14,10 @@ class Calculadora():
         return a * b
 
     def division(self, a, b):
-        return a / b
+        if b == 0:
+            return "Dividir un numero entre 0 no tiene un resultado bien definido"
+        else:
+            return a / b
 
     def raiz(self, a):
         """
